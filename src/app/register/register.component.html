@@ -1,0 +1,50 @@
+
+
+<div class="rosh">
+    <form>
+        <h1>התחברות</h1>
+        <p>
+            <mat-form-field appearance="legacy">
+              <mat-label>שם</mat-label>
+              <input matInput placeholder="שם מלא"  [(ngModel)]="name" name="s">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+           
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="legacy">
+              <mat-label>כתובת</mat-label>
+              <input matInput placeholder="כתובת מלאה" [(ngModel)]="address" name="s" />
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+          </p>
+
+          <div class="example-container">
+            <mat-form-field appearance="legacy">
+              <mat-label>Enter your email</mat-label>
+              <input matInput placeholder="pat@example.com"   [(ngModel)]="mail" name="s">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <mat-error *ngIf="flag1==true">כתובת המייל אינה תקינה</mat-error>
+            </mat-form-field>
+          </div>
+          <p>
+            <mat-form-field appearance="legacy">
+              <mat-label>בחר סיסמה</mat-label>
+              <input matInput placeholder="בחר סיסמה חזקה" type="text" [(ngModel)]="password2" name="s" pattern=".{8,}">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <mat-error *ngIf="flag==true">הסיסמאות אינם תואמות</mat-error>
+
+            </mat-form-field>
+          </p> 
+           <p>
+            <mat-form-field appearance="legacy">
+              <mat-label>הקש סיסמה שוב</mat-label>
+              <input matInput placeholder="הקש בדיוק את הסיסמה שבחרת" type="password" [(ngModel)]="password1" name="s">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+   <mat-error *ngIf="flag==true">הסיסמאות אינם תואמות</mat-error>
+            </mat-form-field>
+          </p>
+
+          <button mat-raised-button color="warn"  value="הרשם" (click)="addUser()" id="s" >התחברות</button>
+    </form>
+</div>

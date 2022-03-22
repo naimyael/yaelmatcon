@@ -1,0 +1,36 @@
+.div-card_recipe{
+
+
+gap:1vw;
+display: inline-block;
+    width: 20vw;
+margin: 1vw;
+}
+.otef{
+   
+    margin: 3.5vw;
+}
+
+// ::ng-deep{
+//     mat-card{
+//         max-width: 100%;
+//     }
+// }
+
+  .conteiner{
+    height: 39.5vw;
+  }
+  .example-sidenav-content {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sidenav {
+    padding: 20px;
+   height: 40vw;
+  }
+  mat-slider {
+    width: 18vw;
+  }

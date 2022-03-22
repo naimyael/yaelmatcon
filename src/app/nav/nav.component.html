@@ -1,0 +1,30 @@
+
+<mat-toolbar>
+ 
+   <span  *ngIf="ifU()==null">yael Aranyas</span>
+
+    <span *ngIf="ifU()!=null">{{ this.userS.oneUser.name}} שלום</span>
+ 
+   
+  <span class="spacer"></span>
+
+   
+
+   
+
+ 
+    <a routerLink="allRecipe"  class="home"  >  <button mat-stroked-button class="home"  color="accent"><mat-icon >home</mat-icon></button></a>
+ 
+ <a     (click)="openDialog()"  >   <button mat-raised-button  class="cnica">כניסה </button></a>
+    <a  class="btn-5" routerLink="register"*ngIf="ifU()==null">  <button mat-stroked-button color="warn">התחברות</button> </a>
+  <!-- routerLink="login" -->
+ 
+    <a   *ngIf="ifU()!=null" (click)="deleteU()"   > <button mat-stroked-button color="warn">יציאה</button></a>
+ 
+</mat-toolbar>
+ <button mat-fab color="warn" matTooltip="הוספת מתכון"*ngIf="ifU()!=null" class="add-icon"><a  routerLink="addRecipe" > <mat-icon>add</mat-icon></a></button>
+
+  <button mat-fab color="warn" matTooltip="בשביל להוסיף מתכון אלך להתחבר" *ngIf="ifU()==null" class="add-icon"><mat-icon >open_in_new</mat-icon>
+
+</button>
+ 

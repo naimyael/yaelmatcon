@@ -1,0 +1,18 @@
+
+<form>
+<mat-form-field appearance="outline">
+    <mat-label>כניסה </mat-label>
+    <input required="true" ngModel name="e" [(ngModel)]="name" matInput placeholder="שם משתמש">
+<mat-error >שדא זה חובה </mat-error>
+
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label> סיסמה </mat-label>
+    <input required="true" ngModel name="descripshen" type="password" name="d" [(ngModel)]="password" matInput placeholder="סיסמה">
+    <mat-error >שדא זה חובה </mat-error> 
+
+  </mat-form-field>
+  
+
+<button  mat-stroked-button color="warn" type="button" class="shake-opacity " value="הרשם" id="s" (click)="function()">הרשם</button>
+</form>

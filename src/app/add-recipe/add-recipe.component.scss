@@ -1,0 +1,41 @@
+#h1{
+    font-size: 5vw;
+    color: #d10d0b;
+    text-align: center;
+}
+.card{  
+    text-align: center; 
+    width: 30vw;
+   
+    box-shadow: 0px 0px 26px black;}
+
+img{
+    width: 30vw;
+}
+mat-selection-list{
+
+    text-align: right;
+}.delate{
+    min-width: 0vw;
+    font-size: 1vw
+    ;padding-right: 0px;
+    padding-left: 0px;
+}
+::ng-deep{
+    mat-card{
+        max-width: 52%;
+    }
+}
+#conteiner{
+    padding: 10px;
+    height: calc(100vh - 84px);
+  display: flex;
+      gap: 10px;
+}#from-continr{
+    width: 40%;
+    margin-left: 5vw
+}
+#card-continr{
+    width: 30%;
+   
+}

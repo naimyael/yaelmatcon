@@ -1,0 +1,48 @@
+
+
+
+.spacer {
+    flex: 1 1 auto;
+    
+  }
+  .icon{
+      border-style: unset;
+
+  }
+ p{
+    direction:rtl;
+ }
+ .mm{
+     text-align: center;
+ }
+ .add-icon{
+    background-color:#e7464c;
+    position: fixed;
+    bottom: 30px;
+    right:30px ;
+    z-index: 3;
+    a{
+            color: white;
+    }
+    
+    
+    }
+
+  .add-icon:hover{
+        background-color: rgb(236, 226, 226);
+        a:hover{
+            color: #ec8a8e;
+        }
+  }
+  .cnica{
+    background-color:#e68689;   color: white;
+  }.home{
+           background-color:#fae1e2;  
+           text-decoration-color: #f0ddde;
+           mat-icon{
+               color: #df4d52;
+           }}
+           .home:hover{
+               background-color:#f8d5d6; 
+           }
+         

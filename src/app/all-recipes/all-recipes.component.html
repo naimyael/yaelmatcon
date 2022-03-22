@@ -1,0 +1,105 @@
+
+
+    <mat-drawer-container class="conteiner" autosize>
+        <mat-drawer #drawer class="sidenav" mode="side">
+          <p>סינון אפשרויות</p>
+          <p *ngIf="showFiller">.לפנך רשימת מסננינם<br> על ידם תוכל לימצוא את מבוקשך</p>
+          <button (click)="showFiller = !showFiller" mat-raised-button>
+           אז איך מסננים?
+          </button>
+<br>
+<br>
+          <div class="row">
+            <form >
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label> משך הכנה </mat-label>
+                    <input ngModel name="descripshen" type="number" #txt  name="ch" [(ngModel)]="time" matInput placeholder="בדקות">
+                  </mat-form-field>
+                 
+                  
+            <form class="example-form">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>קטגוריה</mat-label>
+                  <input type="text"
+                         placeholder="סנן קטגוריה"
+                         aria-label="Number"
+                         matInput
+                         matInput
+                        [formMethod]="myControl"
+                         [matAutocomplete]="auto"
+                       [(ngModel)]="category" name="g">
+                  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    <mat-option name="d" [(ngModel)]="category" *ngFor="let option of  sc.allCategories" [value]="option.name">
+                      {{option.name}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+              </form>
+  
+              <mat-slider thumbLabel   tickInterval="1" step="1" min="0"  max="5" [(ngModel)]="level" name="l" ></mat-slider>
+           <br>
+              <mat-form-field appearance="outline">
+                <mat-label>חפס לפי שם</mat-label>
+                <input ngModel name="descripshen" type="texts"[(ngModel)]="names" placeholder="Search" #d name="fff" matInput placeholder="שם מתכון">
+              </mat-form-field>
+                    
+            <br>
+                
+                <p *ngIf="size">נמצאו {{size}} פריטים</p>
+              
+<br>
+<button (click)="delete()" mat-raised-button>
+                   נקה סינון </button>
+<br><br>
+        
+                <button (click)="cool()" mat-raised-button>
+                    🔍 סנן    </button><br>
+              
+            </form>
+        </div>
+ 
+  </mat-drawer>
+      
+
+        <div class="example-sidenav-content">
+          <button type="button" mat-raised-button (click)="drawer.toggle()">
+            סינון
+          </button>
+        </div>
+
+        
+
+
+
+
+        
+ 
+<div class="otef">
+    <div class="div-card_recipe"*ngFor="let x of RecipeSer.re"   >
+        <mat-card class="card">
+            <mat-card-header (click)="ifUU(x)">
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title  *ngIf="x.nameAll">{{x.nameAll}}</mat-card-title>
+              <mat-card-subtitle>{{x.recipeName}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image (click)="ifUU(x)" [src]="x.imgUrl" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <app-level (click)="ifUU(x)" [i]="x.level"></app-level>
+                <button mat-stroked-button color="warn"  *ngIf="u.oneUser&&x.userId==u.oneUser.ID"(click)="deleteR(x.recipeCode)" id="g">   <mat-icon>delete</mat-icon></button>
+            </mat-card-content>
+          
+          </mat-card>
+         
+          </div>
+        
+        </div>
+      
+      </mat-drawer-container> 
+      
+
+
+
+
+

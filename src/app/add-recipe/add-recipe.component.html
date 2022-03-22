@@ -1,0 +1,141 @@
+<h1 id="h1">*הוספת מתכון*</h1>
+
+<div id="conteiner">
+  <div id="from-continr">
+<form class="from">
+ 
+      
+   
+        <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>שם מתכון</mat-label>
+            <input placeholder="לדוגמא עוגת וניל" matInput type="text" [(ngModel)]="name" name="s" >
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+       
+<br>
+   
+        <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>הכנס כתובת תמונה אם יש לך</mat-label>
+            <input placeholder="https://www.misspetel.com/wp-content/uploads/2020/10/img-22-1.jpg" [(ngModel)]="imgUrl" name="imgg" matInput type="text" >
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+
+
+            <form class="example-form">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>קטגוריה</mat-label>
+                <input type="text"
+                       placeholder="לדוג' עוגות"
+                       aria-label="Number"
+                       matInput
+                       matInput
+                      [formMethod]="myControl"
+                       [matAutocomplete]="auto"
+                     [(ngModel)]="category" name="g">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of  categoryservis.allCategories" [value]="option.name">
+                    {{option.name}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </form>
+
+            
+        <mat-form-field class="example-form-field" appearance="fill">
+          <mat-label>זמן הכנה</mat-label>
+          <input placeholder="לדוג 20" matInput type="number" [(ngModel)]="time" name="j">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+<br>
+   <mat-form-field class="example-form-field" appearance="fill">
+          <mat-label>דרגת קושי</mat-label>
+          <input placeholder="לדוג 20" matInput type="number" [(ngModel)]="level" name="s" class="q" min="1" max="5">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+
+  
+
+      <form  (submit)="aMat($event.target)">
+         <button mat-mini-fab type="submit" [disabled]="mosif1==false"  ><mat-icon>plus_one</mat-icon></button>
+    <mat-form-field appearance="legacy" >   <mat-label>רכיבים</mat-label>
+          <input matInput placeholder="הוסף רכיבים"  *ngIf="material==null"  (keypress)="plusrecivim($event)"   />
+           </mat-form-field>  
+  </form>
+         
+      <form (submit)="aIns($event.target)">
+          <button mat-mini-fab type="submit" [disabled]="mosif2==false"  ><mat-icon>plus_one</mat-icon></button> 
+    <mat-form-field appearance="legacy">
+          <mat-label>אופן ההכנה</mat-label>
+          <input matInput placeholder="הוסף רכיבים"  *ngIf="instruction==null"  (keypress)="cplusahana($event)"  />
+
+        </mat-form-field>
+        
+      </form>
+           
+     
+
+<button mat-raised-button color="warn"   class="shake-opacity " (click)="add_recip()" value="הוספה" id="s" >הוספה</button>
+
+</form>
+
+
+  </div>
+
+
+
+
+  <div id="card-continr">
+
+
+
+    <div class="card">
+     
+        
+        <h1 class="titel">{{name}}</h1>
+        <h6>{{user.oneUser.name}}נוצר ע"י: </h6>
+       
+    
+      <img *ngIf="imgUrl==''" src="../../assets/piccher/התחברותת.jpg" alt="התחברות">
+      <img *ngIf="imgUrl!=''" [src]="imgUrl" alt="כתבו כתובת מדוייקט של תמונה">
+    <p> <b *ngIf="time!=null">זמן הכנה: {{time}} </b><b *ngIf="category!=''"> קטגוריה:{{category}}</b></p>
+      <div   *ngIf="generics.length>0||Instructions.length>0">
+          <h2  *ngIf="generics.length>0">רכיבים</h2>
+     
+          <mat-selection-list  #shoes *ngFor="let index of generics">
+                {{index}}
+                       <button mat-stroked-button color="warn" class="delate" (click)="deMat(index)"> <mat-icon>delete</mat-icon></button>
+            </mat-selection-list>
+           
+    
+            <h2 *ngIf="Instructions.length>0" >אופן ההכנה</h2>
+         <mat-selection-list  #shoes *ngFor="let index of Instructions">
+               {{index}} 
+                                  <button mat-stroked-button color="warn" class="delate" (click)="deIns(index)" > <mat-icon>delete</mat-icon></button>
+    
+               </mat-selection-list>
+           
+              </div>
+    </div>
+      
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+</div>
+
+
+
+ 

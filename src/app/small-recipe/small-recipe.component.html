@@ -1,0 +1,33 @@
+
+
+<mat-card class="card"  >
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title class="titel">{{detilesRecipe.recipeName}}</mat-card-title>
+
+      <mat-card-subtitle> יעל ארניאס</mat-card-subtitle>    
+        <div class="g"><b>רמת הקושי  </b> <app-level [i]="detilesRecipe.level"></app-level></div>
+
+    </mat-card-header>
+    <img mat-card-image [src]="detilesRecipe.imgUrl" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <h2 class="g">🕒 זמן הכנה: {{detilesRecipe.preparationTime}} דקות</h2>
+        <h2 class="g">רכיבים</h2>
+        <h4 class="xnbu">סמנו את המצרכים שיש לכם</h4>
+        <mat-selection-list #shoes>
+            <mat-list-option *ngFor="let index of detilesRecipe.ingredients">
+              {{index}}
+            </mat-list-option>
+          </mat-selection-list>
+          <p class="xnbu">
+            ס"כ מצרכים שיש לכם : {{shoes.selectedOptions.selected.length}}
+          </p>
+          <h2 class="g">אופן ההכנה</h2>
+          <ul class="list-group list-group-flush" *ngFor="let index of detilesRecipe.Preparation" >
+              <li class="list-group-item">{{index}}</li> 
+      
+            </ul>
+    </mat-card-content> 
+ <img class="book" src="../../assets/piccher/ספר.jpg">
+ <img class="book1" src="../../assets/piccher/bon.png">
+  </mat-card>
